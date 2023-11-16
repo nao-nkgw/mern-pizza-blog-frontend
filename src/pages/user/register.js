@@ -11,7 +11,7 @@ const Register = () => {
       const response = await fetch("http://localhost:5000/user/register", {
         method: "POST",
         headers: {
-          Accept: "application/json",
+          "Accept": "application/json",
           "Content-Type": "application/json",
         },
         //change to json-form
