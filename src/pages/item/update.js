@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
-/* import useAuth from "../../utils/useAuth" */
+import useAuth from "../../utils/useAuth"
 
 const UpdateItem = () => {
     const params = useParams()
@@ -9,7 +9,7 @@ const UpdateItem = () => {
     const [rate, setRate] = useState("")  
     const [image, setImage] = useState("")  
     const [description, setDescription] = useState("") 
-    /* const [email, setEmail] = useState("")  */
+    const [email, setEmail] = useState("")
 
     useEffect(() => {
         document.title = "edit page"
@@ -21,7 +21,7 @@ const UpdateItem = () => {
             setRate(jsonResponse.singleItem.rate)
             setImage(jsonResponse.singleItem.image)
             setDescription(jsonResponse.singleItem.description)
-            /* setEmail(jsonResponse.singleItem.email)	 */
+            setEmail(jsonResponse.singleItem.email)
         }
         getSingleItem()
     }, [params.id])	
@@ -50,9 +50,9 @@ const UpdateItem = () => {
         }
     }
     
-/*     const loginUser = useAuth()	 */
+     const loginUser = useAuth()
 
-/*     if(loginUser === email){ */
+        if(loginUser === email){
         return (
             <div>
                 <h1 className="page-title">edit the article</h1>
@@ -65,9 +65,9 @@ const UpdateItem = () => {
                 </form>
             </div>
         )
-/*     }else{	                            
-        return <h1>権限がありません</h1>
-    } */
+     }else{	                            
+        return <h1>you don't have authorization!</h1>
+    } 
 }
 
 export default UpdateItem
