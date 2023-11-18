@@ -38,7 +38,7 @@ const CreateItem = () => {
   if (loginUser) {
     return (
       <div>
-         <h1 className="page-title">create</h1>
+         <h1 className="page-title">create a post</h1>
         <form onSubmit={handleSubmit}>
           <input
             value={title}

@@ -55,7 +55,7 @@ const DeleteItem = () => {
     <div className="delete-page">
       <h1 className="page-title">delete the article</h1>
       <form onSubmit={handleSubmit}>
-        <h2>{title}</h2>
+        <h2>{title}</h2>S
         {image && <img src={require(`../../images${image}`)} alt="article" />}
         <h3>{rate}</h3>
         <p>{description}</p>

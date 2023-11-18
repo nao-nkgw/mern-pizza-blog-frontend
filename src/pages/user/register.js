@@ -29,7 +29,7 @@ const Register = () => {
   };
   return (
     <div>
-      <h1 className="page-title">user register</h1>
+      <h1 className="page-title">create an account</h1>
       <form onSubmit={handleSubmit}>
         <input
           value={name}
