@@ -1,7 +1,7 @@
 const Footer = () => {
     return (
         <footer>
-            <p>@{new Date().getFullYear()} MERN Pizza Blog</p>
+            <p>© {new Date().getFullYear()} Pizza Review ・ Nao Nakagawa</p>
         </footer>
     )
 }

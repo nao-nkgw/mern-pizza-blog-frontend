@@ -291,7 +291,6 @@ header * li a:hover {
   padding: 0.3rem 1.7rem;
   margin-right: 1rem;
   border-radius: 1rem;
-
   color: rgb(255, 255, 255);
   font-size: 1.6rem;
   font-weight: 400;
@@ -301,9 +300,9 @@ header * li a:hover {
 }
 
 .grid-container-si * a:hover {
-  opacity: 0.8;
   transition: all 0.3s;
-  border: 1px #fff solid;
+  color: orangered;
+  background-color: #fff;
   border-radius: 1.5rem;
   cursor: pointer;
 }
