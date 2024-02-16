@@ -5,6 +5,7 @@ const ReadAll = () => {
   const [allItems, setAllItems] = useState();
 
   useEffect(() => {
+    document.title = "Pizza Review"
     /* console.log("test"); */
     const getAllItems = async () => {
       const response = await fetch("http://localhost:5000");
@@ -19,7 +20,7 @@ const ReadAll = () => {
         {allItems &&
           allItems.allItems.map((item) => (
             <Link to={`/item/${item._id}`} key={item._id} className="card">
-              <img src={require(`../../images${item.image}`)} alt="item" />
+              <img src={item.image} alt="item" />
               <div className="texts-area">
                 <h2>{item.rate}</h2>
                 <h3>{item.title}</h3>

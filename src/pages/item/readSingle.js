@@ -10,6 +10,7 @@ const ReadSingleItem = () => {
   const [description, setDescription] = useState("");
 
   useEffect(() => {
+    document.title = title
     const getSingleItem = async () => {
       const response = await fetch(`http://localhost:5000/item/${params.id}`);
       const jsonResponse = await response.json();
@@ -20,12 +21,12 @@ const ReadSingleItem = () => {
       setDescription(jsonResponse.singleItem.description);
     };
     getSingleItem();
-  }, [params.id]);
+  }, [params.id, title]);
 
   return (
     <div className="grid-container-si">
       <div>
-        {image && <img src={require(`../../images${image}`)} alt="item" />}
+        {image && <img src={image} alt="item" />}
       </div>
       <div>
         <h1>{title}</h1>

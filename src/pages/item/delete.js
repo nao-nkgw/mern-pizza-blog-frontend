@@ -48,7 +48,7 @@ const DeleteItem = () => {
 
     if(loginUser === email){
         return (
-            <div className="delete-page">
+            <div className="delete page">
                 <h1 className="page-title">delete</h1>
                 <form onSubmit={handleSubmit}>
                     <h2>{title}</h2>

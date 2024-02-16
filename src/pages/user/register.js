@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -11,7 +11,7 @@ const Register = () => {
       const response = await fetch("http://localhost:5000/user/register", {
         method: "POST",
         headers: {
-          "Accept": "application/json",
+          Accept: "application/json",
           "Content-Type": "application/json",
         },
         //change to json-form
@@ -27,6 +27,11 @@ const Register = () => {
       alert("failed registered user!");
     }
   };
+
+  useEffect(() => {
+    document.title = "register page";
+  }, []);
+
   return (
     <div>
       <h1 className="page-title">create an account</h1>

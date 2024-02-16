@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useAuth from "../../utils/useAuth";
+import ImgInput from "../../components/imgInput";
 
 const CreateItem = () => {
   const [title, setTitle] = useState("");
@@ -33,12 +34,17 @@ const CreateItem = () => {
     }
   };
 
+  useEffect(() => {
+    document.title = "create page";
+  },[]);
+
   const loginUser = useAuth();
 
   if (loginUser) {
     return (
       <div>
-         <h1 className="page-title">create a post</h1>
+        <h1 className="page-title">create a post</h1>
+        <ImgInput setImage={setImage} />
         <form onSubmit={handleSubmit}>
           <input
             value={title}
