@@ -15,7 +15,7 @@ const UpdateItem = () => {
         document.title = "edit page"
         
         const getSingleItem = async() => {
-            const response = await fetch(`http://localhost:5000/item/${params.id}`)
+            const response = await fetch(`https://mern-pizza-blog.onrender.com/item/${params.id}`)
             const jsonResponse = await response.json()
             setTitle(jsonResponse.singleItem.title)
             setRate(jsonResponse.singleItem.rate)
@@ -29,7 +29,7 @@ const UpdateItem = () => {
     const handleSubmit = async(e) => {
         e.preventDefault()
         try{
-            const response = await fetch(`http://localhost:5000/item/update/${params.id}`, {
+            const response = await fetch(`https://mern-pizza-blog.onrender.com/item/update/${params.id}`, {
                 method: "PUT",
                 headers: { 
                     "Accept": "application/json", 

@@ -8,7 +8,7 @@ const ReadAll = () => {
     document.title = "Pizza Review"
     
     const getAllItems = async () => {
-      const response = await fetch("http://localhost:5000");
+      const response = await fetch("https://mern-pizza-blog.onrender.com");
       const jsonResponse = await response.json();
       setAllItems(jsonResponse);
     };
