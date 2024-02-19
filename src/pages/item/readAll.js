@@ -6,7 +6,7 @@ const ReadAll = () => {
 
   useEffect(() => {
     document.title = "Pizza Review"
-    /* console.log("test"); */
+    
     const getAllItems = async () => {
       const response = await fetch("http://localhost:5000");
       const jsonResponse = await response.json();
@@ -18,7 +18,7 @@ const ReadAll = () => {
     <div>
        <div className="grid-container-in">
         {allItems &&
-          allItems.allItems.map((item) => (
+          allItems.allItems.map(item => 
             <Link to={`/item/${item._id}`} key={item._id} className="card">
               <img src={item.image} alt="item" />
               <div className="texts-area">
@@ -27,8 +27,8 @@ const ReadAll = () => {
                 <p>{item.description.substring(0, 80)}...</p>
               </div>
             </Link>
-          ))}
-        {/* <button onClick={getAllItems}>get all articles!</button> //110 comment out*/}
+          )}
+    
       </div>
     </div>
   );
