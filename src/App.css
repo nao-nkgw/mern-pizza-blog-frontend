@@ -333,11 +333,12 @@ header * li a:hover {
   display: grid;
   grid-template-columns: 0.8fr 0.2fr;
   gap: 1rem;
+  color: #858585;
 }
 
 .img-input > input {
   display: block;
-  background-color: rgb(221, 221, 221);
+  background-color: #ffffff;
   padding: 0.4rem 0 0 0.5rem;
 }
 
@@ -346,18 +347,20 @@ header * li a:hover {
   font-size: 1.4rem;
   margin-bottom: 2rem;
   height: 3.6rem;
-  background: #858585;
+  background: #fff;
+  color: orangered;
 }
 
 .img-input > button:hover {
   opacity: 0.8;
-  background: linear-gradient(135deg, #63a1ff, #73ff92);
+  background: orangered;
+  color: #fff;
 }
 
 .img-input > button:disabled,
 .img-input > button[disabled] {
-  background: #858585;
-  color: rgb(165, 165, 165);
+  background: orangered;
+  color: #ffffff;
 }
 
 .img-input > button:disabled,
