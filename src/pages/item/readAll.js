@@ -9,7 +9,7 @@ const ReadAll = () => {
 
   useEffect(() => {
     document.title = "Pizza Review";
-
+    
     const getAllItems = async () => {
       const response = await fetch("https://mern-pizza-blog.onrender.com");
       const jsonResponse = await response.json();
@@ -22,9 +22,9 @@ const ReadAll = () => {
     <div>
       <div>
         {user ? (
-          <h2>Hello {user}!</h2>
+          <h2>Hello "user: {user}" !</h2>
         ) : (
-          <h2>Hello Guest!</h2>
+          <h2>Hello Guest! Please Log In!</h2>
         )}
       </div>
       <div className="grid-container-in">

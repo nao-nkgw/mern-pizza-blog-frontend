@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 // import { AuthContext } from "../../state/AuthContext";
 
 const Login = () => {
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   // const { user, isFetching, error, dispatch } = useContext(AuthContext);
@@ -29,7 +28,6 @@ const Login = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            name: name,
             email: email,
             password: password,
           }),
@@ -51,14 +49,6 @@ const Login = () => {
     <div>
       <h1 className="page-title">Login</h1>
       <form onSubmit={handleSubmit}>
-      <input
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          type="text"
-          name="name"
-          placeholder="user name"
-          required
-        />
         <input
           value={email}
           onChange={(e) => setEmail(e.target.value)}
