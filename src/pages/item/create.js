@@ -1,31 +1,41 @@
 import { useEffect, useState } from "react";
 import useAuth from "../../utils/useAuth";
 import ImgInput from "../../components/imgInput";
+import ReactStarsRating from "react-awesome-stars-rating";
 
 const CreateItem = () => {
   const [title, setTitle] = useState("");
-  const [rate, setRate] = useState("");
+/*   const [rate, setRate] = useState(""); */
   const [image, setImage] = useState("");
   const [description, setDescription] = useState("");
+
+  const onChange = (value) => {
+    setStar(value)
+  };
+  const [star, setStar] = useState(3);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://mern-pizza-blog.onrender.com/item/create", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-          authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-        body: JSON.stringify({
-          title: title,
-          rate: rate,
-          image: image,
-          description: description,
-        }),
-      });
+      const response = await fetch(
+        "https://mern-pizza-blog.onrender.com/item/create",
+        {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+          body: JSON.stringify({
+            title: title,
+            star: star,
+/*             rate: rate, */
+            image: image,
+            description: description,
+          }),
+        }
+      );
 
       const jsonData = await response.json();
       alert(jsonData.message);
@@ -36,7 +46,7 @@ const CreateItem = () => {
 
   useEffect(() => {
     document.title = "create page";
-  },[]);
+  }, []);
 
   const loginUser = useAuth();
 
@@ -54,14 +64,19 @@ const CreateItem = () => {
             placeholder="restaurant name"
             required
           />
-          <input
+          <ReactStarsRating
+            value={star}
+            onChange={onChange}
+            required
+          />
+{/*           <input
             value={rate}
             onChange={(e) => setRate(e.target.value)}
             type="text"
             name="rate"
             placeholder="5-grade rating"
             required
-          />
+          /> */}
           <input
             value={image}
             onChange={(e) => setImage(e.target.value)}

@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import ReactStarsRating from "react-awesome-stars-rating";
 
 const ReadSingleItem = () => {
   const params = useParams();
 
   const [title, setTitle] = useState("");
-  const [rate, setRate] = useState("");
+  const [star, setStar] = useState("");
+/*   const [rate, setRate] = useState(""); */
   const [image, setImage] = useState("");
   const [description, setDescription] = useState("");
 
@@ -16,7 +18,8 @@ const ReadSingleItem = () => {
       const jsonResponse = await response.json();
 
       setTitle(jsonResponse.singleItem.title);
-      setRate(jsonResponse.singleItem.rate);
+      setStar(jsonResponse.singleItem.star);
+      // setRate(jsonResponse.singleItem.rate);
       setImage(jsonResponse.singleItem.image);
       setDescription(jsonResponse.singleItem.description);
     };
@@ -30,7 +33,9 @@ const ReadSingleItem = () => {
       </div>
       <div>
         <h1>{title}</h1>
-        <h2>{rate}</h2>
+        <h2>{star}</h2>
+        <ReactStarsRating value={parseInt(star)} /> 
+        {/* <h2>{rate}</h2> */}
         <hr />
         <p>{description}</p>
         <div>

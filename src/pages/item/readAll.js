@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useAuth from "../../utils/useAuth";
+import ReactStarsRating from "react-awesome-stars-rating";
 
 const ReadAll = () => {
   const [allItems, setAllItems] = useState();
@@ -21,7 +22,7 @@ const ReadAll = () => {
     <div>
       <div>
         {user ? (
-          <h2>Hello "user: {user}" !</h2>
+          <p className="hello" >Hello "Pizza-Mate : <span className="hello-span-user">{user}</span> " !👋  <span className="hello-span">please feel free to review 🍕📝</span> </p>
         ) : (
           <p className="hello">
             Hello Guest ! 🍕  <span className="hello-span">wanna create a post ? 📝 please login / new register your account !</span>
@@ -34,7 +35,8 @@ const ReadAll = () => {
             <Link to={`/item/${item._id}`} key={item._id} className="card">
               <img src={item.image} alt="item" />
               <div className="texts-area">
-                <h2>{item.rate}</h2>
+                <h2>{item.star}</h2>
+                <ReactStarsRating value={item.star} /> 
                 <h3>{item.title}</h3>
                 <p>{item.description.substring(0, 80)}...</p>
               </div>
