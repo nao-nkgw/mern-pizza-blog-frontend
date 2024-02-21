@@ -10,7 +10,7 @@ const useAuth = () => {
         const token = localStorage.getItem("token");
         
         if(!token){
-            navigate("/user/login"); 
+            navigate("/"); 
         }
     
         try{
