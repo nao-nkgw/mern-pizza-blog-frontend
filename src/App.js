@@ -8,6 +8,7 @@ import Update from "./pages/item/update";
 import Delete from "./pages/item/delete";
 import Header from "./components/header";
 import Footer from "./components/footer";
+import Logout from "./pages/user/logout";
 // import { useContext } from "react";
 // import { AuthContext } from "./state/AuthContext";
 import "./App.css";
@@ -21,6 +22,7 @@ const App = () => {
         <Routes>
           <Route path="/user/register" element={<Register />} />
           <Route path="/user/login" element={<Login />} />
+          <Route path="/user/logout" element={<Logout />} />
           <Route path="/" element={<ReadAll />} />
           <Route path="/item/:id" element={<ReadSingle />} />
           <Route path="/item/create" element={<Create />} />

@@ -10,6 +10,8 @@ const Header = () => {
                     <li><Link to="/user/register">register</Link></li>
                     <li><Link to="/user/login">login</Link></li>
                     <li><Link to="/item/create">create post</Link></li>
+                    <li><Link to="/user/logout">logout</Link></li>
+
                 </ul>
             </nav>
         </header>

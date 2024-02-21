@@ -214,6 +214,16 @@ header * li a:hover {
     font-size: 1.2rem;
   }
 }
+/* Hello Guest! */
+
+.hello{
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.hello-span{
+  font-size: 2rem;
+}
 
 /* Index */
 .grid-container-in {

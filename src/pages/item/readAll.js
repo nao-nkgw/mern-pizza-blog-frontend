@@ -2,14 +2,13 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useAuth from "../../utils/useAuth";
 
-
 const ReadAll = () => {
   const [allItems, setAllItems] = useState();
   const user = useAuth(); // Get the authenticated user
 
   useEffect(() => {
     document.title = "Pizza Review";
-    
+
     const getAllItems = async () => {
       const response = await fetch("https://mern-pizza-blog.onrender.com");
       const jsonResponse = await response.json();
@@ -24,7 +23,9 @@ const ReadAll = () => {
         {user ? (
           <h2>Hello "user: {user}" !</h2>
         ) : (
-          <h2>Hello Guest! Please Log In!</h2>
+          <p className="hello">
+            Hello Guest ! 🍕  <span className="hello-span">wanna create a post ? 📝 please login / new register your account !</span>
+          </p>
         )}
       </div>
       <div className="grid-container-in">
