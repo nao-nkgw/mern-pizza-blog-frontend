@@ -238,6 +238,11 @@ header * li a:hover {
   gap: 3rem;
 }
 
+.number{
+  font-size: 2.5rem;
+  font-weight: 600;
+color: #858585;}
+
 @media (max-width: 600px) {
   .grid-container-in {
     grid-template-columns: 1fr;
