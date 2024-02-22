@@ -33,7 +33,8 @@ const ReadSingleItem = () => {
       </div>
       <div>
         <h1>{title}</h1>
-        <h2>{star}</h2>
+        <p className="point">
+                  {`point:`} <span className="number2">{star}</span></p>
         <ReactStarsRating value={parseInt(star)} /> 
         {/* <h2>{rate}</h2> */}
         <hr />

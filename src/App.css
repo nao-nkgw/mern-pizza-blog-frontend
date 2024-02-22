@@ -238,10 +238,22 @@ header * li a:hover {
   gap: 3rem;
 }
 
+
+.title{
+font-size: 2rem;
+font-weight: 600;
+
+}
+
 .number{
   font-size: 2.5rem;
   font-weight: 600;
 color: #858585;}
+
+.number2{
+  font-size: 2.5rem;
+  font-weight: 600;
+color: #fff;}
 
 @media (max-width: 600px) {
   .grid-container-in {
@@ -265,7 +277,21 @@ color: #858585;}
 .card * img,
 .card > img {
   width: 100%;
+  max-height: 49%; 
   border-radius: 1rem 1rem 0 0;
+}
+
+@media (max-width: 768px) {
+  .card > img {
+    max-height: 50%; 
+  }
+}
+
+@media (max-width: 576px) {
+  .card > img {
+    max-height: 50%; 
+ 
+  }
 }
 
 .texts-area {
