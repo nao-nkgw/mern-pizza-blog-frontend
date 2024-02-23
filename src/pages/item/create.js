@@ -5,12 +5,12 @@ import ReactStarsRating from "react-awesome-stars-rating";
 
 const CreateItem = () => {
   const [title, setTitle] = useState("");
-/*   const [rate, setRate] = useState(""); */
+  /*   const [rate, setRate] = useState(""); */
   const [image, setImage] = useState("");
   const [description, setDescription] = useState("");
 
   const onChange = (value) => {
-    setStar(value)
+    setStar(value);
   };
   const [star, setStar] = useState(3);
 
@@ -30,7 +30,7 @@ const CreateItem = () => {
           body: JSON.stringify({
             title: title,
             star: star,
-/*             rate: rate, */
+            /*             rate: rate, */
             image: image,
             description: description,
           }),
@@ -54,22 +54,17 @@ const CreateItem = () => {
     return (
       <div>
         <h1 className="page-title">create a post</h1>
+        <input
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          type="text"
+          name="title"
+          placeholder="restaurant name"
+          required
+        />
         <ImgInput setImage={setImage} />
-        <form onSubmit={handleSubmit}>
-          <input
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            type="text"
-            name="title"
-            placeholder="restaurant name"
-            required
-          />
-          <ReactStarsRating
-            value={star}
-            onChange={onChange}
-            required
-          />
-{/*           <input
+
+        {/*           <input
             value={rate}
             onChange={(e) => setRate(e.target.value)}
             type="text"
@@ -77,14 +72,20 @@ const CreateItem = () => {
             placeholder="5-grade rating"
             required
           /> */}
-          <input
-            value={image}
-            onChange={(e) => setImage(e.target.value)}
-            type="text"
-            name="image"
-            placeholder="image"
-            required
-          />
+        <input
+          value={image}
+          onChange={(e) => setImage(e.target.value)}
+          type="text"
+          name="image"
+          placeholder="image"
+          required
+        />
+        <form onSubmit={handleSubmit}>
+          <p className="rate">
+            rating points on a 5-star scale:<br></br>
+            <ReactStarsRating value={star} onChange={onChange} required />
+          </p>
+
           <textarea
             value={description}
             onChange={(e) => setDescription(e.target.value)}

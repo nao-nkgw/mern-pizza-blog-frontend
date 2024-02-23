@@ -231,6 +231,14 @@ header * li a:hover {
   font-size: 2rem;
 }
 
+/* rate */
+
+.rate{
+  font-size: 2rem;
+  font-weight: 500;
+  align-items: center;
+  
+}
 /* 404Page */
 .grid-container-404 {
   display: grid;
