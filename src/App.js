@@ -9,7 +9,7 @@ import Delete from "./pages/item/delete";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import Logout from "./pages/user/logout";
-import NotFound from "./NotFound";
+import NotFound from "./pages/NotFound";
 // import { useContext } from "react";
 // import { AuthContext } from "./state/AuthContext";
 import "./App.css";
