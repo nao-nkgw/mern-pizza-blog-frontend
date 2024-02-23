@@ -9,6 +9,7 @@ import Delete from "./pages/item/delete";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import Logout from "./pages/user/logout";
+import NotFound from "./NotFound";
 // import { useContext } from "react";
 // import { AuthContext } from "./state/AuthContext";
 import "./App.css";
@@ -28,7 +29,7 @@ const App = () => {
           <Route path="/item/create" element={<Create />} />
           <Route path="/item/update/:id" element={<Update />} />
           <Route path="/item/delete/:id" element={<Delete />} />
-          <Route path="*" element={<h1>Page Not Found</h1>} />
+          <Route path="*" element={<NotFound/>} />
         </Routes>
         <Footer />
       </div>
