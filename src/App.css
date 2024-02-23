@@ -231,6 +231,67 @@ header * li a:hover {
   font-size: 2rem;
 }
 
+/* 404Page */
+.grid-container-404 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.grid-container-404-img {
+  width:100%;
+}
+
+@media (max-width: 600px) {
+  .grid-container-404 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid-container-404 * img {
+  border-radius: 1rem;
+  width: 200px;
+}
+
+.grid-container-404 h2 {
+  color: #fff;
+  margin: 1rem 0 2rem;
+}
+
+.grid-container-404 hr {
+  margin: 1.5rem 0;
+}
+
+.grid-container-404 * button {
+  padding: 0.3rem 1.7rem;
+  margin-right: 1rem;
+  border: 1px #fff solid;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 400;
+  border: 1px #fff solid;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+.grid-container-404 * button:hover {
+  transition: all 0.3s;
+  color: orangered;
+  background: #fff;
+  border-radius: 1.5rem;
+  cursor: pointer;
+}
+
+
+
+@media (max-width: 400px) {
+  .grid-container-404 * a {
+    padding: 0.2rem 1.4rem;
+    font-size: 1.2rem;
+  }
+}
+
 /* Index */
 .grid-container-in {
   display: grid;
